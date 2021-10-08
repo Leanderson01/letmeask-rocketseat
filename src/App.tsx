@@ -1,12 +1,17 @@
 // importando a react-dom-router
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // importando a page Home
-import { Home } from "./pages/Home";
+import { Home } from './pages/Home/index';
 // importando a page NewRoom
-import { NewRoom } from "./pages/NewRoom";
+import { NewRoom } from './pages/NewRoom/index';
+// importando a page Room
+import { Room } from './pages/Room/index';
+// importando a page AdminRoom
+import { AdminRoom } from './pages/AdminRoom';
+
+
 //importando a auth
 import { AuthContextProvider } from './contexts/AuthContext';
-import { Room } from './pages/Room';
 
 
 function App() {
@@ -22,7 +27,9 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/rooms/new" exact component={NewRoom} />
-          <Route path="/rooms/:id" component={Room} />
+          <Route path="/rooms/:id" exact component={Room} />
+
+          <Route path="/admin/rooms/:id" component={AdminRoom} />
         </Switch>
       </AuthContextProvider>
     </BrowserRouter>

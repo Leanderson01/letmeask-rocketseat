@@ -1,18 +1,19 @@
 import { Link, useHistory } from 'react-router-dom';
 import { FormEvent, useState } from 'react'
 
-import illustrationImg from "../assets/images/illustration.svg"
-import logoImg from "../assets/images/logo.svg"
-import { Button } from "../components/Button";
-import { useAuth } from '../hooks/useAuth';
+import illustrationImg from "../../assets/images/illustration.svg"
+import logoImg from "../../assets/images/logo.svg"
+import { Button } from "../../components/Button/index";
+import { useAuth } from '../../hooks/useAuth';
+//  importando o firebase
+import { database } from '../../services/firebase';
 
 
 // webpack, snowpack...
 
 // importando a estilização da minha NewRoom
-import '../styles/auth.scss';
-//  importando o firebase
-import { database } from '../services/firebase';
+import '../NewRoom/styles.scss';
+
 
 export function NewRoom() {
   const { user } = useAuth();
