@@ -22,7 +22,6 @@ export function NewRoom() {
 
   async function handleCreateRoom(event: FormEvent) {
     event.preventDefault();
-    console.log(newRoom);
 
     if (newRoom.trim() === '') {
       return;
@@ -34,7 +33,7 @@ export function NewRoom() {
       authorId: user?.id
     })
 
-    history.push(`/rooms/${firebaseRoom.key}`)
+    history.push(`/admin/rooms/${firebaseRoom.key}`)
   }
 
   return (
@@ -50,7 +49,7 @@ export function NewRoom() {
       <main>
         <div className="main-content">
           <img src={logoImg} alt="letmeask" />
-          <img className="user-avatar" src={user?.avatar} alt="user-avatar" />
+          <img className="user-avatar" src={user?.avatar} alt={user?.name} />
           <h1>{user?.name}</h1>
           <h2>Criar uma nova sala</h2>
           <form onSubmit={handleCreateRoom}>
